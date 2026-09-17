@@ -1,0 +1,83 @@
+<aside id="dashboard-sidebar" class="fixed top-0 left-0 h-full w-[260px] bg-white border-r border-[#E2E8F0] z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]">
+
+    {{-- Logo --}}
+    <div class="flex items-center gap-3 px-6 h-16 border-b border-[#E2E8F0] dark:border-[#2a2a2a]">
+        <a href="{{ url('/') }}" class="flex items-center gap-2">
+            <div class="w-9 h-9 bg-[#2563EB] rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            </div>
+            <span class="text-lg font-bold text-[#111827] dark:text-[#ededed]">EduCare</span>
+        </a>
+    </div>
+
+    {{-- Menu --}}
+    <nav class="p-4 flex flex-col gap-1">
+        <p class="text-xs font-semibold text-[#94A3B8] uppercase tracking-wider px-4 mb-2">Menu Utama</p>
+
+        <a href="{{ url('/dashboard') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('dashboard*') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            Dashboard
+        </a>
+
+        <a href="{{ url('/materials') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('materials*') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+            Materi
+        </a>
+
+        <a href="{{ url('/modules') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('modules*') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+            Modul Belajar
+        </a>
+
+        <a href="{{ url('/quiz') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('quiz*') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            Quiz
+        </a>
+
+        <a href="{{ url('/progress') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('progress') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+            Progress
+        </a>
+
+        <a href="{{ url('/certificates') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('certificates*') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+            Sertifikat
+        </a>
+
+        <div class="border-t border-[#E2E8F0] dark:border-[#2a2a2a] my-3"></div>
+        <p class="text-xs font-semibold text-[#94A3B8] uppercase tracking-wider px-4 mb-2">Fitur Baru</p>
+
+        <a href="{{ url('/student/statistics') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('student/statistics*') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+            Statistik
+        </a>
+
+        <a href="{{ url('/student/calendar') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('student/calendar*') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            Kalender
+        </a>
+
+        <a href="{{ url('/student/messages') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('student/messages*') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+            Pesan
+        </a>
+
+        <div class="border-t border-[#E2E8F0] dark:border-[#2a2a2a] my-3"></div>
+        <p class="text-xs font-semibold text-[#94A3B8] uppercase tracking-wider px-4 mb-2">Akun</p>
+
+        <a href="{{ url('/profile') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->is('profile') ? 'bg-[#EFF6FF] text-[#2563EB] dark:bg-[#2563EB]/15 dark:text-[#60a5fa]' : 'text-[#64748B] hover:bg-gray-50 dark:text-[#a3a3a3] dark:hover:bg-[#2a2a2a]' }}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+            Profil
+        </a>
+
+        <form action="{{ url('/logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-[#64748B] hover:bg-red-50 hover:text-[#DC2626] dark:text-[#a3a3a3] dark:hover:bg-red-900/20 dark:hover:text-[#f87171] transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                Logout
+            </button>
+        </form>
+    </nav>
+</aside>

@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@custom-variant dark (&:is(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-dark-bg: #000000;
+    --color-dark-surface: #1a1a1a;
+    --color-dark-border: #2a2a2a;
+    --color-dark-text: #ededed;
+    --color-dark-muted: #a3a3a3;
+}
+
+/* Dark mode color scheme */
+.dark {
+    color-scheme: dark;
+}
+
+/* Smooth transitions for theme switching */
+html {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Toast animation */
+@keyframes slideIn {
+    from { transform: translateY(-1rem); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideOut {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-1rem); opacity: 0; }
+}
+.toast-in { animation: slideIn 0.3s ease-out; }
+.toast-out { animation: slideOut 0.3s ease-in; }
+
+/* Print styles - certificates stay light */
+@media print {
+    body {
+        background: white !important;
+        color: #111827 !important;
+    }
+    .dark body {
+        background: white !important;
+        color: #111827 !important;
+    }
+    .dark {
+        color-scheme: light !important;
+    }
+}
